@@ -1,0 +1,77 @@
+digraph MFC {
+  rankdir=LR;
+  splines=ortho;
+  nodesep=0.4; ranksep=1.2; compound=true;
+  node [shape=rect, style="filled,rounded", fontname="Segoe UI, Arial", fontsize=10, height=0.4];
+  edge [penwidth=1.5, arrowhead=vee, arrowsize=0.7];
+  { rank=same;
+    "DCU_IV" [fillcolor="#FFF9DB", color="#1f77b4", penwidth=2.5, fontname="Segoe UI Bold"];
+  }
+  subgraph cluster_M_A {
+    label="M/A"; style="filled,dashed"; color="#DDDDDD"; bgcolor="#F8F9FA";
+    fontname="Segoe UI Bold"; fontsize=11; margin=15;
+    "MA-2_3" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "MA-4" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "MA-5" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "MA-6" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "MA-7" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "MA-8" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+  }
+  subgraph cluster_AOI {
+    label="AOI"; style="filled,dashed"; color="#DDDDDD"; bgcolor="#EBF2FF";
+    fontname="Segoe UI Bold"; fontsize=11; margin=15;
+    "AOI-5" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "AOI-7" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "AOI-6" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "AOI-8" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "AOI-9" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "AOI-10" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "AOI-11" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+  }
+  subgraph cluster_SPOT {
+    label="SPOT"; style="filled,dashed"; color="#DDDDDD"; bgcolor="#FFF8F0";
+    fontname="Segoe UI Bold"; fontsize=11; margin=15;
+    "SPOT-1" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "SPOT-2" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "SPOT-3" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "SPOT-4" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "SPOT-5" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "SPOT-6" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "PCB Sep." [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+  }
+  subgraph cluster_Sealer {
+    label="Sealer"; style="filled,dashed"; color="#DDDDDD"; bgcolor="#F0FDF4";
+    fontname="Segoe UI Bold"; fontsize=11; margin=15;
+    "SB-AB-1" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "SB-AB-2" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "SB-Eng-1" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "SB-Eng-2" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "SB-Eng-3" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "SB ELFI" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "SIDE FILL" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+  }
+  subgraph cluster_FA {
+    label="FA"; style="filled,dashed"; color="#DDDDDD"; bgcolor="#F5F3FF";
+    fontname="Segoe UI Bold"; fontsize=11; margin=15;
+    "FA AC-1" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "FA AB-1" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "FA AB-2" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "FA AB-3" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "FA NWP-3" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "FA NWP-4" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "FA CS-1" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "FA WP-2" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "FA WP-3" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "FA WP-4" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "FA WP-5" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "FA WP-6" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "PWC" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+    "CBMU" [fillcolor="#FFFFFF", color="#AAAAAA", penwidth=0.8];
+  }
+  "DCU_IV" -> "MA-2_3" [color="#1f77b4"];
+  "MA-2_3" -> "AOI-5" [color="#1f77b4"];
+  "AOI-5" -> "AOI-7" [color="#1f77b4"];
+  "AOI-7" -> "SPOT-2" [color="#1f77b4"];
+  "SPOT-2" -> "SB-AB-1" [color="#1f77b4"];
+  "SB-AB-1" -> "FA AB-1" [color="#1f77b4"];
+}

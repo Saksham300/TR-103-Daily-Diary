@@ -1,0 +1,102 @@
+digraph MFC {
+rankdir=LR;
+graph [ranksep=1.6, nodesep=0.8];
+node [shape=box, style=filled, fontname=Arial];
+edge [penwidth=1.4];
+
+{ rank=same;
+"DCU_IV" [fillcolor="#FFF2CC", color="#1f77b4", penwidth=2];
+}
+
+subgraph cluster_M_A {
+label="M/A";
+style=dashed;
+bgcolor="#F7F7F7";
+{ rank=same;
+"MA-2_3" [fillcolor="#F0F0F0"];
+"MA-4" [fillcolor="#F0F0F0"];
+"MA-5" [fillcolor="#F0F0F0"];
+"MA-6" [fillcolor="#F0F0F0"];
+"MA-7" [fillcolor="#F0F0F0"];
+"MA-8" [fillcolor="#F0F0F0"];
+}
+}
+
+subgraph cluster_AOI {
+label="AOI";
+style=dashed;
+bgcolor="#EEF5FF";
+{ rank=same;
+"AOI-5" [fillcolor="#E8F0FF"];
+"AOI-7" [fillcolor="#E8F0FF"];
+"AOI-6" [fillcolor="#E8F0FF"];
+"AOI-8" [fillcolor="#E8F0FF"];
+"AOI-9" [fillcolor="#E8F0FF"];
+"AOI-10" [fillcolor="#E8F0FF"];
+"AOI-11" [fillcolor="#E8F0FF"];
+}
+}
+
+subgraph cluster_SPOT {
+label="SPOT";
+style=dashed;
+bgcolor="#FFF4E6";
+{ rank=same;
+"SPOT-1" [fillcolor="#F0F0F0"];
+"SPOT-2" [fillcolor="#F0F0F0"];
+"SPOT-3" [fillcolor="#F0F0F0"];
+"SPOT-4" [fillcolor="#F0F0F0"];
+"SPOT-5" [fillcolor="#F0F0F0"];
+"SPOT-6" [fillcolor="#F0F0F0"];
+"PCB Sep." [fillcolor="#F0F0F0"];
+}
+}
+
+subgraph cluster_Sealer {
+label="Sealer";
+style=dashed;
+bgcolor="#EEF8F0";
+{ rank=same;
+"SB-AB-1" [fillcolor="#F0F0F0"];
+"SB-AB-2" [fillcolor="#F0F0F0"];
+"SB-Eng-1" [fillcolor="#F0F0F0"];
+"SB-Eng-2" [fillcolor="#F0F0F0"];
+"SB-Eng-3" [fillcolor="#F0F0F0"];
+"SB ELFI" [fillcolor="#F0F0F0"];
+"SIDE FILL" [fillcolor="#F0F0F0"];
+}
+}
+
+subgraph cluster_FA {
+label="FA";
+style=dashed;
+bgcolor="#F3EEFF";
+{ rank=same;
+"FA AC-1" [fillcolor="#E6E0FF", penwidth=1.6];
+"FA AB-1" [fillcolor="#E6E0FF", penwidth=1.6];
+"FA AB-2" [fillcolor="#E6E0FF", penwidth=1.6];
+"FA AB-3" [fillcolor="#E6E0FF", penwidth=1.6];
+"FA NWP-3" [fillcolor="#E6E0FF", penwidth=1.6];
+"FA NWP-4" [fillcolor="#E6E0FF", penwidth=1.6];
+"FA CS-1" [fillcolor="#E6E0FF", penwidth=1.6];
+"FA WP-2" [fillcolor="#E6E0FF", penwidth=1.6];
+"FA WP-3" [fillcolor="#E6E0FF", penwidth=1.6];
+"FA WP-4" [fillcolor="#E6E0FF", penwidth=1.6];
+"FA WP-5" [fillcolor="#E6E0FF", penwidth=1.6];
+"FA WP-6" [fillcolor="#E6E0FF", penwidth=1.6];
+"PWC" [fillcolor="#E6E0FF", penwidth=1.6];
+"CBMU" [fillcolor="#E6E0FF", penwidth=1.6];
+}
+}
+
+"DCU_IV" -> "MA-2_3" [color="#1f77b4"];
+"MA-2_3" -> "AOI-5" [color="#1f77b4"];
+"AOI-5" -> "AOI-7" [color="#1f77b4"];
+"AOI-7" -> "SPOT-2" [color="#1f77b4"];
+"SPOT-2" -> "SB-AB-1" [color="#1f77b4"];
+"SB-AB-1" -> "FA AB-1" [color="#1f77b4"];
+"MA-2_3" -> "AOI-5" [style=invis];
+"AOI-5" -> "SPOT-1" [style=invis];
+"SPOT-1" -> "SB-AB-1" [style=invis];
+"SB-AB-1" -> "FA AC-1" [style=invis];
+}
